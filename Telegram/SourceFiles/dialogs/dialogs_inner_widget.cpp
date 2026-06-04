@@ -3945,6 +3945,11 @@ rpl::producer<> InnerWidget::cancelSearchFromRequests() const {
 	return _cancelSearchFromRequests.events();
 }
 
+auto InnerWidget::redirectToSearchRequests() const
+-> rpl::producer<not_null<QKeyEvent*>> {
+	return _redirectToSearchRequests.events();
+}
+
 rpl::producer<> InnerWidget::changeSearchFromRequests() const {
 	return _changeSearchFromRequests.events();
 }
@@ -5827,6 +5832,12 @@ void InnerWidget::keyPressEvent(QKeyEvent *e) {
 		return;
 	} else if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter) {
 		chooseRow();
+		return;
+	} else if (!(e->modifiers() & ~Qt::ShiftModifier)
+		&& (e->key() != Qt::Key_Shift)
+		&& !e->text().isEmpty()
+		&& (e->text()[0].unicode() >= 32)) {
+		_redirectToSearchRequests.fire(e);
 		return;
 	}
 	RpWidget::keyPressEvent(e);

@@ -296,6 +296,7 @@ private:
 	[[nodiscard]] bool redirectToSearchPossible() const;
 	[[nodiscard]] bool redirectKeyToSearch(QKeyEvent *e) const;
 	[[nodiscard]] bool redirectImeToSearch() const;
+	void redirectToSearch(QKeyEvent *e);
 
 	struct CancelSearchOptions {
 		bool forceFullCancel = false;

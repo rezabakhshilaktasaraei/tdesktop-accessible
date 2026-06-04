@@ -515,6 +515,12 @@ Widget::Widget(
 	) | rpl::on_next([=](const ChosenRow &row) {
 		chosenRow(row);
 	}, lifetime());
+	_inner->redirectToSearchRequests(
+	) | rpl::on_next([=](not_null<QKeyEvent*> e) {
+		if (redirectKeyToSearch(e)) {
+			redirectToSearch(e);
+		}
+	}, lifetime());
 	_inner->openBotMainAppRequests(
 	) | rpl::on_next([=](UserId userId) {
 		if (const auto user = session().data().user(userId)) {
@@ -4207,16 +4213,7 @@ void Widget::keyPressEvent(QKeyEvent *e) {
 			_scroll->height());
 	} else if (_inner->processKeyDispatch(e)) {
 	} else if (redirectKeyToSearch(e)) {
-		// This delay in search focus processing allows us not to create
-		// _suggestions in case the event inserts some non-whitespace search
-		// query while still show _suggestions animated, if it is a space.
-		_postponeProcessSearchFocusChange = true;
-		_search->setFocusFast();
-		if (e->key() != Qt::Key_Space) {
-			QCoreApplication::sendEvent(_search->rawTextEdit(), e);
-		}
-		_postponeProcessSearchFocusChange = false;
-		processSearchFocusChange();
+		redirectToSearch(e);
 	} else {
 		e->ignore();
 	}
@@ -4253,7 +4250,7 @@ bool Widget::redirectToSearchPossible() const {
 		&& !_childList
 		&& _search->isVisible()
 		&& !_search->hasFocus()
-		&& hasFocus();
+		&& (hasFocus() || _inner->hasFocus());
 }
 
 bool Widget::redirectKeyToSearch(QKeyEvent *e) const {
@@ -4280,6 +4277,19 @@ bool Widget::redirectKeyToSearch(QKeyEvent *e) const {
 
 bool Widget::redirectImeToSearch() const {
 	return redirectToSearchPossible();
+}
+
+void Widget::redirectToSearch(QKeyEvent *e) {
+	// This delay in search focus processing allows us not to create
+	// _suggestions in case the event inserts some non-whitespace search
+	// query while still show _suggestions animated, if it is a space.
+	_postponeProcessSearchFocusChange = true;
+	_search->setFocusFast();
+	if (e->key() != Qt::Key_Space) {
+		QCoreApplication::sendEvent(_search->rawTextEdit(), e);
+	}
+	_postponeProcessSearchFocusChange = false;
+	processSearchFocusChange();
 }
 
 void Widget::paintEvent(QPaintEvent *e) {

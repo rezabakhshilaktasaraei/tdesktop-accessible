@@ -213,6 +213,8 @@ public:
 	[[nodiscard]] rpl::producer<SearchRequestDelay> searchRequests() const;
 	[[nodiscard]] rpl::producer<QString> completeHashtagRequests() const;
 	[[nodiscard]] rpl::producer<> refreshHashtagsRequests() const;
+	[[nodiscard]] auto redirectToSearchRequests() const
+		-> rpl::producer<not_null<QKeyEvent*>>;
 
 	[[nodiscard]] RowDescriptor resolveChatNext(RowDescriptor from = {}) const;
 	[[nodiscard]] RowDescriptor resolveChatPrevious(RowDescriptor from = {}) const;
@@ -707,6 +709,7 @@ private:
 	rpl::event_stream<SearchRequestDelay> _searchRequests;
 	rpl::event_stream<QString> _completeHashtagRequests;
 	rpl::event_stream<> _refreshHashtagsRequests;
+	rpl::event_stream<not_null<QKeyEvent*>> _redirectToSearchRequests;
 	rpl::event_stream<UserId> _openBotMainAppRequests;
 
 	using QuickActionPtr = std::unique_ptr<Ui::QuickActionContext>;
