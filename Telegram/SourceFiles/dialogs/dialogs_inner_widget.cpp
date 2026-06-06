@@ -5886,6 +5886,47 @@ void InnerWidget::announceSelectedFocus() {
 	}
 }
 
+bool InnerWidget::selectChildByIndex(int index) {
+	clearMouseSelection();
+	if (_state == WidgetState::Default) {
+		if (index < 0 || index >= _shownList->size()) {
+			return false;
+		}
+		_collapsedSelected = -1;
+		_selected = (_shownList->cbegin() + index)->get();
+		scrollToDefaultSelected();
+	} else if (_state == WidgetState::Filtered) {
+		const auto ref = filteredChildAt(index);
+		if (!ref) {
+			return false;
+		}
+		_hashtagSelected = _filteredSelected = _peerSearchSelected
+			= _previewSelected = _searchedSelected = -1;
+		switch (ref->cohort) {
+		case AccessibilityCohort::Hashtag:
+			_hashtagSelected = ref->local;
+			break;
+		case AccessibilityCohort::Filtered:
+			_filteredSelected = ref->local;
+			break;
+		case AccessibilityCohort::PeerSearch:
+			_peerSearchSelected = ref->local;
+			break;
+		case AccessibilityCohort::Preview:
+			_previewSelected = ref->local;
+			break;
+		case AccessibilityCohort::Searched:
+			_searchedSelected = ref->local;
+			break;
+		}
+		scrollToFilteredSelected();
+	} else {
+		return false;
+	}
+	update();
+	return true;
+}
+
 void InnerWidget::accessibilityChildSetFocus(int index) {
 	// UIA invokes provider actions (SetFocus) on a background thread,
 	// so hop to the main thread before touching any widget state.
@@ -5897,49 +5938,23 @@ void InnerWidget::accessibilityChildSetFocus(int index) {
 		// SetFocus can't move real keyboard focus to a row. Translate it
 		// into our internal selection, then either grab keyboard focus
 		// (focusInEvent announces the row) or announce it directly.
-		clearMouseSelection();
-		if (_state == WidgetState::Default) {
-			if (index < 0 || index >= _shownList->size()) {
-				return;
-			}
-			_collapsedSelected = -1;
-			_selected = (_shownList->cbegin() + index)->get();
-			scrollToDefaultSelected();
-		} else if (_state == WidgetState::Filtered) {
-			const auto ref = filteredChildAt(index);
-			if (!ref) {
-				return;
-			}
-			_hashtagSelected = _filteredSelected = _peerSearchSelected
-				= _previewSelected = _searchedSelected = -1;
-			switch (ref->cohort) {
-			case AccessibilityCohort::Hashtag:
-				_hashtagSelected = ref->local;
-				break;
-			case AccessibilityCohort::Filtered:
-				_filteredSelected = ref->local;
-				break;
-			case AccessibilityCohort::PeerSearch:
-				_peerSearchSelected = ref->local;
-				break;
-			case AccessibilityCohort::Preview:
-				_previewSelected = ref->local;
-				break;
-			case AccessibilityCohort::Searched:
-				_searchedSelected = ref->local;
-				break;
-			}
-			scrollToFilteredSelected();
-		} else {
+		if (!selectChildByIndex(index)) {
 			return;
 		}
-		update();
-		// Selection is already set, so if focus moves here focusInEvent
-		// announces this very row; otherwise announce it ourselves.
 		if (hasFocus()) {
 			announceSelectedFocus();
 		} else {
 			setFocus();
+		}
+	});
+}
+
+void InnerWidget::accessibilityChildActivate(int index) {
+	// UIA invokes the press action on a background thread too; move the
+	// selection and open the chat on the main thread.
+	crl::on_main(this, [=] {
+		if (selectChildByIndex(index)) {
+			chooseRow();
 		}
 	});
 }

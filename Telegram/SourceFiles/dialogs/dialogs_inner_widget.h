@@ -254,6 +254,7 @@ public:
 	QString accessibilityChildSubItemName(int row, int column) const override;
 	QString accessibilityChildSubItemValue(int row, int column) const override;
 	void accessibilityChildSetFocus(int index) override;
+	void accessibilityChildActivate(int index) override;
 
 protected:
 	void visibleTopBottomUpdated(
@@ -346,6 +347,7 @@ private:
 	void scrollToItem(int top, int height);
 	void scrollToDefaultSelected();
 	void scrollToFilteredSelected();
+	bool selectChildByIndex(int index);
 	void setCollapsedPressed(int pressed);
 	void setPressed(
 		Row *pressed,
