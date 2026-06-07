@@ -2233,6 +2233,25 @@ void Widget::setInnerFocus(bool unfocusSearch) {
 			|| _searchHasFocus
 			|| _searchSuggestionsLocked)) {
 		_search->setFocus();
+	} else if (Ui::ScreenReaderModeActive() && _inner) {
+		const auto restore = controller()->takeScreenReaderRestoreFocus();
+		if (restore && restore->isVisible()) {
+			// Return to whatever opened the section we are coming back from.
+			// Defer it so the focus change is the last accessibility event
+			// once the section has finished closing - otherwise the screen
+			// reader announces the transition and not the restored control.
+			InvokeQueued(restore.data(), [restore] {
+				if (restore && restore->isVisible()) {
+					restore->setFocus();
+				}
+			});
+		} else if (!_screenReaderListFocused) {
+			// Land on the chat list once, when first entering.
+			_screenReaderListFocused = true;
+			_inner->setFocus();
+		} else {
+			setFocus();
+		}
 	} else {
 		setFocus();
 	}

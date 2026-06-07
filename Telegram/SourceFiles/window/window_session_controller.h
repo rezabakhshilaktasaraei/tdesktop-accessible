@@ -441,6 +441,17 @@ public:
 	void takeTabbedSelectorOwnershipFrom(not_null<QWidget*> parent);
 	[[nodiscard]] bool hasTabbedSelectorOwnership() const;
 
+	// Screen-reader focus restoration: remember what was focused before a
+	// section takes over, so we can return there instead of the chat list.
+	void setScreenReaderRestoreFocus(QPointer<QWidget> widget) {
+		_screenReaderRestoreFocus = widget;
+	}
+	[[nodiscard]] QPointer<QWidget> takeScreenReaderRestoreFocus() {
+		const auto result = _screenReaderRestoreFocus;
+		_screenReaderRestoreFocus = nullptr;
+		return result;
+	}
+
 	// This is needed for History TopBar updating when searchInChat
 	// is changed in the Dialogs::Widget of the current window.
 	rpl::producer<Dialogs::Key> searchInChatValue() const {
@@ -850,6 +861,7 @@ private:
 
 	rpl::event_stream<ChatHelpers::FileChosen> _stickerOrEmojiChosen;
 	QPointer<SectionWidget> _activeLayerSection;
+	QPointer<QWidget> _screenReaderRestoreFocus;
 
 	PeerData *_showEditPeer = nullptr;
 	rpl::variable<Data::Folder*> _openedFolder;

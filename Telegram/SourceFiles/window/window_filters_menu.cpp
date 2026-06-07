@@ -44,6 +44,7 @@ https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 #include "styles/style_menu_icons.h"
 
 #include <QtGui/QtEvents>
+#include <QtWidgets/QApplication>
 
 namespace Window {
 namespace {
@@ -480,6 +481,11 @@ base::unique_qptr<Ui::SideBarButton> FiltersMenu::prepareButton(
 }
 
 void FiltersMenu::openFiltersSettings() {
+	if (Ui::ScreenReaderModeActive()) {
+		// Remember the focused button so we return to it (not the chat list)
+		// when the settings are closed in screen-reader mode.
+		_session->setScreenReaderRestoreFocus(QApplication::focusWidget());
+	}
 	const auto filters = &_session->session().data().chatsFilters();
 	if (filters->suggestedLoaded()) {
 		_session->showSettings(Settings::FoldersId());
