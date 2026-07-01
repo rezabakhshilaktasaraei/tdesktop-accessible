@@ -80,9 +80,19 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#254](https://github.com/desktop-app/patches/pull/254) | Backport UIA selection + orientation interfaces for custom tab controls | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
 | [#257](https://github.com/desktop-app/patches/pull/257) | Use RTTI in automation id on Qt 5, too (accessibility commit within "Fixes") | [@ilya-fedin](https://github.com/ilya-fedin) | Unreleased |
 
+### NVDA ([nvaccess/nvda](https://github.com/nvaccess/nvda))
+
+Some issues can also be fixed on the screen reader side. The change below addresses the same root cause as [patches#253](https://github.com/desktop-app/patches/pull/253), from within NVDA itself.
+
+| PR | Title | Author | First Release |
+|---|---|---|---|
+| [#20255](https://github.com/nvaccess/nvda/pull/20255) | fix: handle COMError in UIA selectionContainer to prevent silent focus | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | NVDA 2026.3 |
+
+> **Silent focus on selected list items — fixed from both sides.** On Qt 5.15, the UIA `SelectionContainer` provider errors when an accessible item exposes no action interface (as Telegram Desktop's chat rows do). NVDA then went silent when focusing a *selected* row. The bug is cleared by **either** update, whichever ships first: a Telegram Desktop build carrying the patched Qt ([patches#253](https://github.com/desktop-app/patches/pull/253)), **or** NVDA 2026.3 ([nvda#20255](https://github.com/nvaccess/nvda/pull/20255)), which defensively treats the error as an empty selection container.
+
 ## Contributors
 
-- **[@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei)** (Reza Bakhshi Laktasaraei) — initiated accessibility support in Telegram Desktop; authored 32 of 35 merged PRs across tdesktop, lib_ui, lib_base, and patches.
+- **[@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei)** (Reza Bakhshi Laktasaraei) — initiated accessibility support in Telegram Desktop; authored 32 of 35 merged PRs across tdesktop, lib_ui, lib_base, and patches, plus the NVDA-side fix [nvda#20255](https://github.com/nvaccess/nvda/pull/20255).
 - **[@ilya-fedin](https://github.com/ilya-fedin)** (Ilya Fedin) — RTTI-based class name and automation id for accessibility ([patches#233](https://github.com/desktop-app/patches/pull/233), [patches#257](https://github.com/desktop-app/patches/pull/257)).
 - **[@mukthar777](https://github.com/mukthar777)** (K H Musthafal Mukthar) — added accessibility labels for history view buttons ([tdesktop#30213](https://github.com/telegramdesktop/tdesktop/pull/30213)).
 
