@@ -2,7 +2,7 @@
 
 This repository tracks **accessibility improvements** in [Telegram Desktop](https://github.com/telegramdesktop/tdesktop). Each release corresponds to an official Telegram Desktop version that introduced new accessibility features for screen reader users.
 
-> This is **not** a separate build. All changes listed here are merged into the official Telegram Desktop and its dependencies ([lib_ui](https://github.com/desktop-app/lib_ui), [lib_base](https://github.com/desktop-app/lib_base)).
+> This is **not** a separate build. All changes listed here are merged into the official Telegram Desktop and its dependencies ([lib_ui](https://github.com/desktop-app/lib_ui), [lib_base](https://github.com/desktop-app/lib_base), [patches](https://github.com/desktop-app/patches)).
 
 ## Releases
 
@@ -70,9 +70,20 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 |---|---|---|---|
 | [#273](https://github.com/desktop-app/lib_base/pull/273) | Add screen reader detection via QAccessible::ActivationObserver | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.2.5 |
 
+### patches ([desktop-app/patches](https://github.com/desktop-app/patches))
+
+| PR | Title | Author | First Release |
+|---|---|---|---|
+| [#233](https://github.com/desktop-app/patches/pull/233) | Use RTTI to get class name for accessibility | [@ilya-fedin](https://github.com/ilya-fedin) | v6.2.5 |
+| [#245](https://github.com/desktop-app/patches/pull/245) | Add patch: fix toggle state notification for all checkable widgets | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.0 |
+| [#253](https://github.com/desktop-app/patches/pull/253) | Don't require an action interface for UIA SelectionContainer | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
+| [#254](https://github.com/desktop-app/patches/pull/254) | Backport UIA selection + orientation interfaces for custom tab controls | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
+| [#257](https://github.com/desktop-app/patches/pull/257) | Use RTTI in automation id on Qt 5, too (accessibility commit within "Fixes") | [@ilya-fedin](https://github.com/ilya-fedin) | Unreleased |
+
 ## Contributors
 
-- **[@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei)** (Reza Bakhshi Laktasaraei) — initiated accessibility support in Telegram Desktop; authored 29 of 30 merged PRs across tdesktop, lib_ui, and lib_base.
+- **[@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei)** (Reza Bakhshi Laktasaraei) — initiated accessibility support in Telegram Desktop; authored 32 of 35 merged PRs across tdesktop, lib_ui, lib_base, and patches.
+- **[@ilya-fedin](https://github.com/ilya-fedin)** (Ilya Fedin) — RTTI-based class name and automation id for accessibility ([patches#233](https://github.com/desktop-app/patches/pull/233), [patches#257](https://github.com/desktop-app/patches/pull/257)).
 - **[@mukthar777](https://github.com/mukthar777)** (K H Musthafal Mukthar) — added accessibility labels for history view buttons ([tdesktop#30213](https://github.com/telegramdesktop/tdesktop/pull/30213)).
 
 ## Tested With
