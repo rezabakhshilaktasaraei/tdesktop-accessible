@@ -20,7 +20,7 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [v6.6.4](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.6.4) | Stable | `ButtonMenu` role for main menu buttons |
 | [v6.7.7](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.7.7) | Stable | Screen reader support for the country select box and the language list |
 | [v6.8.3](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.8.3) | Stable | Screen reader support for the chat list and the message list |
-| _Unreleased_ | — | Chat folders strip exposed as an accessible list, chat-list type-to-search redirection, restored Home/End navigation in the chat list |
+| [v6.9.4](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.9.4) | Beta | Chat folders strip exposed as an accessible list, chat-list type-to-search redirection, restored Home/End navigation in the chat list |
 
 ## All Merged Pull Requests
 
@@ -38,11 +38,11 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#30304](https://github.com/telegramdesktop/tdesktop/pull/30304) | Add screen reader support for language list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.7.7 |
 | [#30305](https://github.com/telegramdesktop/tdesktop/pull/30305) | Add screen reader support for chat list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.8.3 |
 | [#30306](https://github.com/telegramdesktop/tdesktop/pull/30306) | Add screen reader support for message list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.8.3 |
-| [#30758](https://github.com/telegramdesktop/tdesktop/pull/30758) | Engage chat search on typing instead of focus in screen reader mode | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#30762](https://github.com/telegramdesktop/tdesktop/pull/30762) | Redirect chat list typing to the search field in screen reader mode | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#30772](https://github.com/telegramdesktop/tdesktop/pull/30772) | Expose chat folders strip as an accessible tab control | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#30879](https://github.com/telegramdesktop/tdesktop/pull/30879) | Expose the chat-folders strip as an accessible list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#30886](https://github.com/telegramdesktop/tdesktop/pull/30886) | Restore Home/End navigation in the chat list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
+| [#30758](https://github.com/telegramdesktop/tdesktop/pull/30758) | Engage chat search on typing instead of focus in screen reader mode | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#30762](https://github.com/telegramdesktop/tdesktop/pull/30762) | Redirect chat list typing to the search field in screen reader mode | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#30772](https://github.com/telegramdesktop/tdesktop/pull/30772) | Expose chat folders strip as an accessible tab control | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#30879](https://github.com/telegramdesktop/tdesktop/pull/30879) | Expose the chat-folders strip as an accessible list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#30886](https://github.com/telegramdesktop/tdesktop/pull/30886) | Restore Home/End navigation in the chat list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 
 ### lib_ui ([desktop-app/lib_ui](https://github.com/desktop-app/lib_ui))
 
@@ -60,9 +60,9 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#286](https://github.com/desktop-app/lib_ui/pull/286) | Accessibility: Improve menu accessibility states and navigation | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.0 |
 | [#292](https://github.com/desktop-app/lib_ui/pull/292) | feat(accessibility): add ButtonMenu role to IconButton and SideBarButton | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.4 |
 | [#293](https://github.com/desktop-app/lib_ui/pull/293) | Restore menu item focus for accessibility, fix DropdownMenu | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.4 |
-| [#308](https://github.com/desktop-app/lib_ui/pull/308) | Let ElasticScroll pass unhandled keys to the parent | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#304](https://github.com/desktop-app/lib_ui/pull/304) | feat(accessibility): support PageTab role and selected state on buttons | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
+| [#308](https://github.com/desktop-app/lib_ui/pull/308) | Let ElasticScroll pass unhandled keys to the parent | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#304](https://github.com/desktop-app/lib_ui/pull/304) | feat(accessibility): support PageTab role and selected state on buttons | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 
 ### lib_base ([desktop-app/lib_base](https://github.com/desktop-app/lib_base))
 
@@ -76,9 +76,9 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 |---|---|---|---|
 | [#233](https://github.com/desktop-app/patches/pull/233) | Use RTTI to get class name for accessibility | [@ilya-fedin](https://github.com/ilya-fedin) | v6.2.5 |
 | [#245](https://github.com/desktop-app/patches/pull/245) | Add patch: fix toggle state notification for all checkable widgets | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.0 |
-| [#253](https://github.com/desktop-app/patches/pull/253) | Don't require an action interface for UIA SelectionContainer | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#254](https://github.com/desktop-app/patches/pull/254) | Backport UIA selection + orientation interfaces for custom tab controls | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#257](https://github.com/desktop-app/patches/pull/257) | Use RTTI in automation id on Qt 5, too (accessibility commit within "Fixes") | [@ilya-fedin](https://github.com/ilya-fedin) | Unreleased |
+| [#253](https://github.com/desktop-app/patches/pull/253) | Don't require an action interface for UIA SelectionContainer | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#254](https://github.com/desktop-app/patches/pull/254) | Backport UIA selection + orientation interfaces for custom tab controls | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#257](https://github.com/desktop-app/patches/pull/257) | Use RTTI in automation id on Qt 5, too (accessibility commit within "Fixes") | [@ilya-fedin](https://github.com/ilya-fedin) | v6.9.4 |
 
 ### NVDA ([nvaccess/nvda](https://github.com/nvaccess/nvda))
 
@@ -88,7 +88,7 @@ Some issues can also be fixed on the screen reader side. The change below addres
 |---|---|---|---|
 | [#20255](https://github.com/nvaccess/nvda/pull/20255) | fix: handle COMError in UIA selectionContainer to prevent silent focus | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | NVDA 2026.3 |
 
-> **Silent focus on selected list items — fixed from both sides.** On Qt 5.15, the UIA `SelectionContainer` provider errors when an accessible item exposes no action interface (as Telegram Desktop's chat rows do). NVDA then went silent when focusing a *selected* row. The bug is cleared by **either** update, whichever ships first: a Telegram Desktop build carrying the patched Qt ([patches#253](https://github.com/desktop-app/patches/pull/253)), **or** NVDA 2026.3 ([nvda#20255](https://github.com/nvaccess/nvda/pull/20255)), which defensively treats the error as an empty selection container.
+> **Silent focus on selected list items — fixed from both sides.** On Qt 5.15, the UIA `SelectionContainer` provider errors when an accessible item exposes no action interface (as Telegram Desktop's chat rows do). NVDA then went silent when focusing a *selected* row. The bug is cleared by **either** update: the Telegram-side Qt patch ([patches#253](https://github.com/desktop-app/patches/pull/253)) shipped in **v6.9.4**, and NVDA 2026.3 ([nvda#20255](https://github.com/nvaccess/nvda/pull/20255)) will fix it independently for users on older Telegram builds or other Qt apps.
 
 ## Contributors
 
