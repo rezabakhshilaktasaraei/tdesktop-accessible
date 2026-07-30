@@ -20,7 +20,9 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [v6.6.4](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.6.4) | Stable | `ButtonMenu` role for main menu buttons |
 | [v6.7.7](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.7.7) | Stable | Screen reader support for the country select box and the language list |
 | [v6.8.3](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.8.3) | Stable | Screen reader support for the chat list and the message list |
-| [v6.9.4](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.9.4) | Beta | Chat folders strip exposed as an accessible list, chat-list type-to-search redirection, restored Home/End navigation in the chat list |
+| [v6.9.4](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v6.9.4) | Beta | Chat folders strip exposed as an accessible list, chat-list type-to-search redirection, restored Home/End navigation in the chat list, screen reader focus/activate on chat list rows |
+| [v7.0.1](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v7.0.1) | Stable | Screen reader focus/activate on country, language, and message history rows; keyboard message selection with multi-selection state; chat list focused on launch; main-menu hit-area hidden from screen readers |
+| [v7.0.2](https://github.com/rezabakhshilaktasaraei/tdesktop-accessible/releases/tag/v7.0.2) | Stable | Keep the message list visible and focused while a chat loads |
 
 ## All Merged Pull Requests
 
@@ -43,6 +45,15 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#30772](https://github.com/telegramdesktop/tdesktop/pull/30772) | Expose chat folders strip as an accessible tab control | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#30879](https://github.com/telegramdesktop/tdesktop/pull/30879) | Expose the chat-folders strip as an accessible list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#30886](https://github.com/telegramdesktop/tdesktop/pull/30886) | Restore Home/End navigation in the chat list | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#30769](https://github.com/telegramdesktop/tdesktop/pull/30769) | Support screen reader focus and activate on chat list rows | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#30930](https://github.com/telegramdesktop/tdesktop/pull/30930) | Focus chat list on launch in screen reader mode | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30931](https://github.com/telegramdesktop/tdesktop/pull/30931) | Hide the main menu hit-area button from screen readers | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30940](https://github.com/telegramdesktop/tdesktop/pull/30940) | Support screen reader focus and activate on country list rows | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30943](https://github.com/telegramdesktop/tdesktop/pull/30943) | Support screen reader focus and activate on language list rows | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30948](https://github.com/telegramdesktop/tdesktop/pull/30948) | Support screen reader focus and activate on message history rows | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30947](https://github.com/telegramdesktop/tdesktop/pull/30947) | Add keyboard message selection for screen reader users | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30958](https://github.com/telegramdesktop/tdesktop/pull/30958) | Report multi-selection state on message history lists | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+| [#30975](https://github.com/telegramdesktop/tdesktop/pull/30975) | Keep the message list visible and focused while a chat loads | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.2 |
 
 ### lib_ui ([desktop-app/lib_ui](https://github.com/desktop-app/lib_ui))
 
@@ -63,6 +74,8 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#308](https://github.com/desktop-app/lib_ui/pull/308) | Let ElasticScroll pass unhandled keys to the parent | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#304](https://github.com/desktop-app/lib_ui/pull/304) | feat(accessibility): support PageTab role and selected state on buttons | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#303](https://github.com/desktop-app/lib_ui/pull/303) | feat(accessibility): support SetFocus and Press actions on painted list items | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#319](https://github.com/desktop-app/lib_ui/pull/319) | Add multi-select fields to AccessibilityState | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
 
 ### lib_base ([desktop-app/lib_base](https://github.com/desktop-app/lib_base))
 
@@ -76,9 +89,10 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 |---|---|---|---|
 | [#233](https://github.com/desktop-app/patches/pull/233) | Use RTTI to get class name for accessibility | [@ilya-fedin](https://github.com/ilya-fedin) | v6.2.5 |
 | [#245](https://github.com/desktop-app/patches/pull/245) | Add patch: fix toggle state notification for all checkable widgets | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.0 |
-| [#253](https://github.com/desktop-app/patches/pull/253) | Don't require an action interface for UIA SelectionContainer | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#253](https://github.com/desktop-app/patches/pull/253) | Don't require an action interface for UIA SelectionContainer *(later reverted by [#258](https://github.com/desktop-app/patches/pull/258))* | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#254](https://github.com/desktop-app/patches/pull/254) | Backport UIA selection + orientation interfaces for custom tab controls | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#257](https://github.com/desktop-app/patches/pull/257) | Use RTTI in automation id on Qt 5, too (accessibility commit within "Fixes") | [@ilya-fedin](https://github.com/ilya-fedin) | v6.9.4 |
+| [#258](https://github.com/desktop-app/patches/pull/258) | Revert "Don't require an action interface for UIA SelectionContainer" (no longer needed — see note below) | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
 
 ### NVDA ([nvaccess/nvda](https://github.com/nvaccess/nvda))
 
@@ -88,11 +102,11 @@ Some issues can also be fixed on the screen reader side. The change below addres
 |---|---|---|---|
 | [#20255](https://github.com/nvaccess/nvda/pull/20255) | fix: handle COMError in UIA selectionContainer to prevent silent focus | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | NVDA 2026.3 |
 
-> **Silent focus on selected list items — fixed from both sides.** On Qt 5.15, the UIA `SelectionContainer` provider errors when an accessible item exposes no action interface (as Telegram Desktop's chat rows do). NVDA then went silent when focusing a *selected* row. The bug is cleared by **either** update: the Telegram-side Qt patch ([patches#253](https://github.com/desktop-app/patches/pull/253)) shipped in **v6.9.4**, and NVDA 2026.3 ([nvda#20255](https://github.com/nvaccess/nvda/pull/20255)) will fix it independently for users on older Telegram builds or other Qt apps.
+> **Silent focus on selected list items — how it was resolved.** On Qt 5.15, the UIA `SelectionContainer` provider errors when an accessible item exposes no action interface (as Telegram Desktop's chat rows once did), which made NVDA go silent when focusing a *selected* row. It was first worked around with a downstream Qt patch ([patches#253](https://github.com/desktop-app/patches/pull/253), shipped in **v6.9.4**). Since then the chat-list items expose a press action ([lib_ui#303](https://github.com/desktop-app/lib_ui/pull/303)), so the provider passes the check naturally and the patch was reverted as no longer needed ([patches#258](https://github.com/desktop-app/patches/pull/258), **v7.0.1**). NVDA 2026.3 ([nvda#20255](https://github.com/nvaccess/nvda/pull/20255)) adds defense-in-depth for older Telegram builds or other Qt apps that still hit the error.
 
 ## Contributors
 
-- **[@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei)** (Reza Bakhshi Laktasaraei) — initiated accessibility support in Telegram Desktop; authored 32 of 35 merged PRs across tdesktop, lib_ui, lib_base, and patches, plus the NVDA-side fix [nvda#20255](https://github.com/nvaccess/nvda/pull/20255).
+- **[@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei)** (Reza Bakhshi Laktasaraei) — initiated accessibility support in Telegram Desktop; authored 44 of 47 merged PRs across tdesktop, lib_ui, lib_base, and patches, plus the NVDA-side fix [nvda#20255](https://github.com/nvaccess/nvda/pull/20255).
 - **[@ilya-fedin](https://github.com/ilya-fedin)** (Ilya Fedin) — RTTI-based class name and automation id for accessibility ([patches#233](https://github.com/desktop-app/patches/pull/233), [patches#257](https://github.com/desktop-app/patches/pull/257)).
 - **[@mukthar777](https://github.com/mukthar777)** (K H Musthafal Mukthar) — added accessibility labels for history view buttons ([tdesktop#30213](https://github.com/telegramdesktop/tdesktop/pull/30213)).
 
