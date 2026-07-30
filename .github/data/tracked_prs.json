@@ -1,0 +1,94 @@
+{
+  "primary_authors": ["rezabakhshilaktasaraei"],
+  "sections": [
+    {
+      "key": "tdesktop",
+      "repo": "telegramdesktop/tdesktop",
+      "detect": true,
+      "ignore": [],
+      "prs": [
+        {"n": 29808, "author": "rezabakhshilaktasaraei", "release": "v6.2.5", "title": "Introduce initial accessibility support to Telegram Desktop"},
+        {"n": 29964, "author": "rezabakhshilaktasaraei", "release": "v6.2.6", "title": "Accessibility: Add Value API, improve Slider, and refine Roles"},
+        {"n": 30022, "author": "rezabakhshilaktasaraei", "release": "v6.3.7", "title": "Make chat filters sidebar accessible to screen readers"},
+        {"n": 30213, "author": "mukthar777", "release": "v6.5.0", "title": "Accessibility: add labels for buttons history"},
+        {"n": 30340, "author": "rezabakhshilaktasaraei", "release": "v6.6.0", "title": "Add accessible name to search button in narrow layout"},
+        {"n": 30445, "author": "rezabakhshilaktasaraei", "release": "v6.6.4", "title": "feat(accessibility): use ButtonMenu role for main menu buttons"},
+        {"n": 30303, "author": "rezabakhshilaktasaraei", "release": "v6.7.7", "title": "Add screen reader support for country select box"},
+        {"n": 30304, "author": "rezabakhshilaktasaraei", "release": "v6.7.7", "title": "Add screen reader support for language list"},
+        {"n": 30305, "author": "rezabakhshilaktasaraei", "release": "v6.8.3", "title": "Add screen reader support for chat list"},
+        {"n": 30306, "author": "rezabakhshilaktasaraei", "release": "v6.8.3", "title": "Add screen reader support for message list"},
+        {"n": 30758, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Engage chat search on typing instead of focus in screen reader mode"},
+        {"n": 30762, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Redirect chat list typing to the search field in screen reader mode"},
+        {"n": 30772, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Expose chat folders strip as an accessible tab control"},
+        {"n": 30879, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Expose the chat-folders strip as an accessible list"},
+        {"n": 30886, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Restore Home/End navigation in the chat list"},
+        {"n": 30769, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Support screen reader focus and activate on chat list rows"},
+        {"n": 30930, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Focus chat list on launch in screen reader mode"},
+        {"n": 30931, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Hide the main menu hit-area button from screen readers"},
+        {"n": 30940, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Support screen reader focus and activate on country list rows"},
+        {"n": 30943, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Support screen reader focus and activate on language list rows"},
+        {"n": 30948, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Support screen reader focus and activate on message history rows"},
+        {"n": 30947, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Add keyboard message selection for screen reader users"},
+        {"n": 30958, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Report multi-selection state on message history lists"},
+        {"n": 30975, "author": "rezabakhshilaktasaraei", "release": "v7.0.2", "title": "Keep the message list visible and focused while a chat loads"}
+      ]
+    },
+    {
+      "key": "lib_ui",
+      "repo": "desktop-app/lib_ui",
+      "detect": true,
+      "ignore": [],
+      "prs": [
+        {"n": 265, "author": "rezabakhshilaktasaraei", "release": "v6.2.5", "title": "Add accessibility roles, names, and keyboard activation for core widgets"},
+        {"n": 268, "author": "rezabakhshilaktasaraei", "release": "v6.2.6", "title": "Add keyboard navigation and accessibility state handling for Checkbox and Radiobutton"},
+        {"n": 270, "author": "rezabakhshilaktasaraei", "release": "v6.3.0", "title": "Add pressed state reporting for AbstractButton and fix Checkbox state notification"},
+        {"n": 271, "author": "rezabakhshilaktasaraei", "release": "v6.3.0", "title": "Revert pressed state reporting from AbstractButton"},
+        {"n": 272, "author": "rezabakhshilaktasaraei", "release": "v6.3.2", "title": "Add accessibility name for SideBarButton with badge support"},
+        {"n": 275, "author": "rezabakhshilaktasaraei", "release": "v6.3.6", "title": "Add UIAutomation Invoke support for buttons and checkboxes"},
+        {"n": 277, "author": "rezabakhshilaktasaraei", "release": "v6.4.0", "title": "Report checked state for SettingsButton toggles"},
+        {"n": 278, "author": "rezabakhshilaktasaraei", "release": "v6.6.0", "title": "Add Accessible::Item for exposing painted (non-QWidget) elements to screen readers"},
+        {"n": 284, "author": "rezabakhshilaktasaraei", "release": "v6.6.0", "title": "Accessibility: Add screen reader support for Menu items"},
+        {"n": 286, "author": "rezabakhshilaktasaraei", "release": "v6.6.0", "title": "Accessibility: Improve menu accessibility states and navigation"},
+        {"n": 292, "author": "rezabakhshilaktasaraei", "release": "v6.6.4", "title": "feat(accessibility): add ButtonMenu role to IconButton and SideBarButton"},
+        {"n": 293, "author": "rezabakhshilaktasaraei", "release": "v6.6.4", "title": "Restore menu item focus for accessibility, fix DropdownMenu"},
+        {"n": 308, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Let ElasticScroll pass unhandled keys to the parent"},
+        {"n": 304, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "feat(accessibility): support PageTab role and selected state on buttons"},
+        {"n": 311, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Use List/ListItem accessibility role for ordered button strips"},
+        {"n": 303, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "feat(accessibility): support SetFocus and Press actions on painted list items"},
+        {"n": 319, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Add multi-select fields to AccessibilityState"}
+      ]
+    },
+    {
+      "key": "lib_base",
+      "repo": "desktop-app/lib_base",
+      "detect": true,
+      "ignore": [],
+      "prs": [
+        {"n": 273, "author": "rezabakhshilaktasaraei", "release": "v6.2.5", "title": "Add screen reader detection via QAccessible::ActivationObserver"}
+      ]
+    },
+    {
+      "key": "patches",
+      "repo": "desktop-app/patches",
+      "detect": true,
+      "ignore": [],
+      "prs": [
+        {"n": 233, "author": "ilya-fedin", "release": "v6.2.5", "title": "Use RTTI to get class name for accessibility"},
+        {"n": 245, "author": "rezabakhshilaktasaraei", "release": "v6.6.0", "title": "Add patch: fix toggle state notification for all checkable widgets"},
+        {"n": 253, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Don't require an action interface for UIA SelectionContainer *(later reverted by [#258](https://github.com/desktop-app/patches/pull/258))*"},
+        {"n": 254, "author": "rezabakhshilaktasaraei", "release": "v6.9.4", "title": "Backport UIA selection + orientation interfaces for custom tab controls"},
+        {"n": 257, "author": "ilya-fedin", "release": "v6.9.4", "title": "Use RTTI in automation id on Qt 5, too (accessibility commit within \"Fixes\")"},
+        {"n": 258, "author": "rezabakhshilaktasaraei", "release": "v7.0.1", "title": "Revert \"Don't require an action interface for UIA SelectionContainer\" (no longer needed — see note below)"}
+      ]
+    },
+    {
+      "key": "nvda",
+      "repo": "nvaccess/nvda",
+      "detect": false,
+      "ignore": [],
+      "prs": [
+        {"n": 20255, "author": "rezabakhshilaktasaraei", "release": "NVDA 2026.3", "title": "fix: handle COMError in UIA selectionContainer to prevent silent focus"}
+      ]
+    }
+  ]
+}

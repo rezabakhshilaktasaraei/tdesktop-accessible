@@ -28,6 +28,7 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 
 ### Telegram Desktop ([telegramdesktop/tdesktop](https://github.com/telegramdesktop/tdesktop))
 
+<!-- prs:tdesktop:start -->
 | PR | Title | Author | First Release |
 |---|---|---|---|
 | [#29808](https://github.com/telegramdesktop/tdesktop/pull/29808) | Introduce initial accessibility support to Telegram Desktop | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.2.5 |
@@ -54,9 +55,11 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#30947](https://github.com/telegramdesktop/tdesktop/pull/30947) | Add keyboard message selection for screen reader users | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
 | [#30958](https://github.com/telegramdesktop/tdesktop/pull/30958) | Report multi-selection state on message history lists | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
 | [#30975](https://github.com/telegramdesktop/tdesktop/pull/30975) | Keep the message list visible and focused while a chat loads | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.2 |
+<!-- prs:tdesktop:end -->
 
 ### lib_ui ([desktop-app/lib_ui](https://github.com/desktop-app/lib_ui))
 
+<!-- prs:lib_ui:start -->
 | PR | Title | Author | First Release |
 |---|---|---|---|
 | [#265](https://github.com/desktop-app/lib_ui/pull/265) | Add accessibility roles, names, and keyboard activation for core widgets | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.2.5 |
@@ -76,15 +79,19 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#303](https://github.com/desktop-app/lib_ui/pull/303) | feat(accessibility): support SetFocus and Press actions on painted list items | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#319](https://github.com/desktop-app/lib_ui/pull/319) | Add multi-select fields to AccessibilityState | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+<!-- prs:lib_ui:end -->
 
 ### lib_base ([desktop-app/lib_base](https://github.com/desktop-app/lib_base))
 
+<!-- prs:lib_base:start -->
 | PR | Title | Author | First Release |
 |---|---|---|---|
 | [#273](https://github.com/desktop-app/lib_base/pull/273) | Add screen reader detection via QAccessible::ActivationObserver | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.2.5 |
+<!-- prs:lib_base:end -->
 
 ### patches ([desktop-app/patches](https://github.com/desktop-app/patches))
 
+<!-- prs:patches:start -->
 | PR | Title | Author | First Release |
 |---|---|---|---|
 | [#233](https://github.com/desktop-app/patches/pull/233) | Use RTTI to get class name for accessibility | [@ilya-fedin](https://github.com/ilya-fedin) | v6.2.5 |
@@ -93,14 +100,17 @@ This repository tracks **accessibility improvements** in [Telegram Desktop](http
 | [#254](https://github.com/desktop-app/patches/pull/254) | Backport UIA selection + orientation interfaces for custom tab controls | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#257](https://github.com/desktop-app/patches/pull/257) | Use RTTI in automation id on Qt 5, too (accessibility commit within "Fixes") | [@ilya-fedin](https://github.com/ilya-fedin) | v6.9.4 |
 | [#258](https://github.com/desktop-app/patches/pull/258) | Revert "Don't require an action interface for UIA SelectionContainer" (no longer needed — see note below) | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
+<!-- prs:patches:end -->
 
 ### NVDA ([nvaccess/nvda](https://github.com/nvaccess/nvda))
 
 Some issues can also be fixed on the screen reader side. The change below addresses the same root cause as [patches#253](https://github.com/desktop-app/patches/pull/253), from within NVDA itself.
 
+<!-- prs:nvda:start -->
 | PR | Title | Author | First Release |
 |---|---|---|---|
 | [#20255](https://github.com/nvaccess/nvda/pull/20255) | fix: handle COMError in UIA selectionContainer to prevent silent focus | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | NVDA 2026.3 |
+<!-- prs:nvda:end -->
 
 > **Silent focus on selected list items — how it was resolved.** On Qt 5.15, the UIA `SelectionContainer` provider errors when an accessible item exposes no action interface (as Telegram Desktop's chat rows once did), which made NVDA go silent when focusing a *selected* row. It was first worked around with a downstream Qt patch ([patches#253](https://github.com/desktop-app/patches/pull/253), shipped in **v6.9.4**). Since then the chat-list items expose a press action ([lib_ui#303](https://github.com/desktop-app/lib_ui/pull/303)), so the provider passes the check naturally and the patch was reverted as no longer needed ([patches#258](https://github.com/desktop-app/patches/pull/258), **v7.0.1**). NVDA 2026.3 ([nvda#20255](https://github.com/nvaccess/nvda/pull/20255)) adds defense-in-depth for older Telegram builds or other Qt apps that still hit the error.
 
